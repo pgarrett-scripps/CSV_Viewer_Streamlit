@@ -60,11 +60,10 @@ with st.sidebar:
         format_func=lambda x: x[1],  # Display the description to the user
         index=0
     )
+    delimiter = delimiter[0]
 
     if delimiter == "custom":
         delimiter = st.text_input("Custom Delimiter", value=",")
-    else:
-        delimiter = delimiter[0]
 
     has_header = st.checkbox("CSV has header row", value=True)
 
