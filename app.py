@@ -30,7 +30,7 @@ def handle_input():
         if input_method == 'Enter CSV text':
             text = st.text_area("Enter CSV data", height=250)
         else:
-            uploaded_file = st.file_uploader("Upload a CSV file", type=['csv'])
+            uploaded_file = st.file_uploader("Upload a CSV file")
             text = StringIO(uploaded_file.getvalue().decode("utf-8")).getvalue() if uploaded_file is not None else ""
 
         return text
