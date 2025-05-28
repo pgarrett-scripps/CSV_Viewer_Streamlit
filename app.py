@@ -126,8 +126,6 @@ def parse_excel():
 
 
 def main():
-    st.title("Data Reader")
-
     with st.sidebar:
         st.header("File Options")
         file_type = st.selectbox(
@@ -167,11 +165,11 @@ def main():
             st.stop()
 
     if df is not None:
-        st.subheader(title)
+        st.subheader(title, divider=True)
         if max_rows:
-            st.dataframe(df.head(max_rows), use_container_width=True, hide_index=hide_index)
+            st.dataframe(df.head(max_rows), use_container_width=True, hide_index=hide_index, height=700)
         else:
-            st.dataframe(df, use_container_width=True, hide_index=hide_index)
+            st.dataframe(df, use_container_width=True, hide_index=hide_index, height=700)
 
 
 if __name__ == "__main__":
